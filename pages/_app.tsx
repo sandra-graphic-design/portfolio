@@ -3,11 +3,13 @@ import { ThemeProvider, createTheme, responsiveFontSizes, useTheme, PaletteLinea
 import Header from '../components/header';
 import CssBaseline from '@mui/material/CssBaseline';
 import { PaletteMode } from '@mui/material';
-import { useState, useMemo, createContext, useContext } from 'react';
+import { useState, useMemo, createContext, useContext, useEffect } from 'react';
 import { AppPropsType } from 'next/dist/shared/lib/utils';
 import { LanguageProvider } from '../contexts/LanguageContext';
 import { Analytics } from '@vercel/analytics/react';
 import Meta from '../components/meta';
+import Script from 'next/script';
+import * as gtag from "../lib/gtag"
 
 
 export const ColorModeContext = createContext({
@@ -67,11 +69,11 @@ export default function App({ Component, pageProps, router }: AppPropsType) {
   const colorMode = useMemo(
     () => ({
       getColorMode: () => {
-          if (mode === 'light') {
-            return 'light'
-          } else {
-            return 'dark'
-          }
+        if (mode === 'light') {
+          return 'light'
+        } else {
+          return 'dark'
+        }
       },
       // The dark mode switch would invoke this method
       toggleColorMode: () => {
@@ -83,19 +85,59 @@ export default function App({ Component, pageProps, router }: AppPropsType) {
     [],
   );
 
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   // Update the theme only if the mode changes
   theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
   theme = responsiveFontSizes(theme)
 
-  return <LanguageProvider>
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Header />
-        <Component {...pageProps} key={router.route} />
-        <Analytics />
-        <Meta/>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
-  </LanguageProvider>
+  return <div>
+    <Script id="google-tag-manager" strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-WVDZBMT');`}}
+    />
+    <noscript
+      dangerouslySetInnerHTML={{
+        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVDZBMT"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+      }}
+    />
+    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-C467WGNEJZ" />
+    <Script
+      id="google-analytics"
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `  window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-C467WGNEJZ');
+            `
+      }}
+    />
+    <LanguageProvider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Header />
+          <Component {...pageProps} key={router.route} />
+          <Analytics />
+          <Meta />
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </LanguageProvider>
+  </div>
 }
