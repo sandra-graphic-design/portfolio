@@ -1,4 +1,4 @@
-# Sandra's UX Design Portfolio
+# Sandra's Portfolio
 
 ## Made with Next.js, Material UI React, and TypeScript
 
