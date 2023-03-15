@@ -13,6 +13,8 @@ import Coffee4 from "../../public/assets/az-coffee/Az_Coffee_04.png"
 import Coffee5 from "../../public/assets/az-coffee/Az_Coffee_05.png"
 import CoffeeGuide from "../../public/assets/az-coffee/Guide.png"
 import ProtectedImage from "../../components/protected-image";
+import Layout from '../../components/layout'
+
 
 
 export default function AZCoffee() {
@@ -20,94 +22,96 @@ export default function AZCoffee() {
     const theme = useTheme();
     const { t } = useTranslation();
 
-    return <MyContainer>
-        <Head>
-            <title>Coffee Designs</title>
-            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <Container maxWidth="lg">
-            <SummaryCard
-                role="graphic_designer"
-                company="Tot Sant Cugat"
-                timeframe="TBD"
-                teamstyle="solo_designer"
-                tools="Adobe Creative Cloud - Illustrator, Photoshop, After Effects"
-            >
-            </SummaryCard>
-            <br />
-            <br />
-            <br />
-            <Image
-                src={CoffeeGuide}
-                alt="Coffee 1"
-                style={{borderRadius: 4}}
-                loading="eager"
-                placeholder='blur'
-            >
-            </Image>
-            <br />
-            <br />
-            <Image
-                src={Coffee1}
-                alt="Coffee 2"
-                style={{borderRadius: 4}}
-                loading="eager"
-                placeholder='blur'
-            >
-            </Image>
-            <br />
-            <br />
-            <Image
-                src={Coffee2}
-                alt="Coffee 3"
-                style={{borderRadius: 4}}
-                placeholder='blur'
-            >
-            </Image>
-            <br />
-            <br />
-            <Image
-                src={Coffee3}
-                alt="Coffee 4"
-                style={{borderRadius: 4}}
-                placeholder='blur'
-            >
-            </Image>
-            <br />
-            <br />
-            <Image
-                src={Coffee4}
-                alt="Coffee 5"
-                style={{borderRadius: 4}}
-                placeholder='blur'
-            >
-            </Image>
-            <br />
-            <br />
-            <ProtectedImage
-                src={Coffee5.src}
-                alt="Coffee 6"
-            />
-            <br />
-            <br />
-        </Container>
-        <Container maxWidth="md">
+    return <Layout>
+        <MyContainer>
+            <Head>
+                <title>Coffee Designs</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <br />
-            <Typography variant='h3'>{t("thanks_for_reading")}</Typography>
-            <br />
-            <br />
-            <br />
-            <br />
-        </Container>
-    </MyContainer>
+            <Container maxWidth="lg">
+                <SummaryCard
+                    role="graphic_designer"
+                    company="Tot Sant Cugat"
+                    timeframe="TBD"
+                    teamstyle="solo_designer"
+                    tools="Adobe Creative Cloud - Illustrator, Photoshop, After Effects"
+                >
+                </SummaryCard>
+                <br />
+                <br />
+                <br />
+                <Image
+                    src={CoffeeGuide}
+                    alt="Coffee 1"
+                    style={{ borderRadius: 4 }}
+                    loading="eager"
+                    placeholder='blur'
+                >
+                </Image>
+                <br />
+                <br />
+                <Image
+                    src={Coffee1}
+                    alt="Coffee 2"
+                    style={{ borderRadius: 4 }}
+                    loading="eager"
+                    placeholder='blur'
+                >
+                </Image>
+                <br />
+                <br />
+                <Image
+                    src={Coffee2}
+                    alt="Coffee 3"
+                    style={{ borderRadius: 4 }}
+                    placeholder='blur'
+                >
+                </Image>
+                <br />
+                <br />
+                <Image
+                    src={Coffee3}
+                    alt="Coffee 4"
+                    style={{ borderRadius: 4 }}
+                    placeholder='blur'
+                >
+                </Image>
+                <br />
+                <br />
+                <Image
+                    src={Coffee4}
+                    alt="Coffee 5"
+                    style={{ borderRadius: 4 }}
+                    placeholder='blur'
+                >
+                </Image>
+                <br />
+                <br />
+                <ProtectedImage
+                    src={Coffee5.src}
+                    alt="Coffee 6"
+                />
+                <br />
+                <br />
+            </Container>
+            <Container maxWidth="md">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <Typography variant='h3'>{t("thanks_for_reading")}</Typography>
+                <br />
+                <br />
+                <br />
+                <br />
+            </Container>
+        </MyContainer>
+    </Layout>
 }

@@ -22,6 +22,8 @@ import Lineart13 from "../../public/assets/lineart/Lineart_13.png";
 import Lineart14 from "../../public/assets/lineart/Lineart_14.png";
 import Lineart15 from "../../public/assets/lineart/Lineart_15.png";
 import ProtectedImage from "../../components/protected-image";
+import Layout from '../../components/layout'
+
 
 
 export default function LineartIllustrations() {
@@ -29,7 +31,7 @@ export default function LineartIllustrations() {
     const theme = useTheme();
     const { t } = useTranslation();
 
-    return <MyContainer>
+    return <Layout><MyContainer>
         <Head>
             <title>Lineart Illustrations</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -54,7 +56,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart1}
                 alt="Line art 1"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 loading="eager"
                 placeholder='blur'
             >
@@ -64,7 +66,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart2}
                 alt="Line art 2"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 loading="eager"
                 placeholder='blur'
             >
@@ -74,7 +76,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart3}
                 alt="Line art 3"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -83,7 +85,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart4}
                 alt="Line art 4"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -92,7 +94,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart5}
                 alt="Line art 5"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -101,16 +103,16 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart6}
                 alt="Line art 6"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <Image
                 src={Lineart7}
                 alt="Line art 7"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -119,7 +121,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart8}
                 alt="Line art 8"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -128,7 +130,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart9}
                 alt="Line art 9"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -137,7 +139,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart10}
                 alt="Line art 10"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -146,7 +148,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart11}
                 alt="Line art 11"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -155,7 +157,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart12}
                 alt="Line art 12"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -164,7 +166,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart13}
                 alt="Line art 13"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -173,7 +175,7 @@ export default function LineartIllustrations() {
             <Image
                 src={Lineart14}
                 alt="Line art 14"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -198,4 +200,5 @@ export default function LineartIllustrations() {
             <br />
         </Container>
     </MyContainer>
+    </Layout>
 }

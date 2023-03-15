@@ -21,13 +21,15 @@ import Illustration5 from "../../public/assets/magazine-illustrations/illustrati
 import Illustration6 from "../../public/assets/magazine-illustrations/illustration_06.png";
 import Illustration7 from "../../public/assets/magazine-illustrations/illustration_06.png";
 import ProtectedImage from "../../components/protected-image";
+import Layout from '../../components/layout'
+
 
 export default function MagazineIllustrations() {
 
     const theme = useTheme();
     const { t } = useTranslation();
 
-    return <MyContainer>
+    return <Layout><MyContainer>
         <Head>
             <title>Magazine Illustrations</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -52,7 +54,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Article1}
                 alt="Article 1"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
                 loading="eager"
             >
@@ -62,7 +64,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Article2}
                 alt="Article 2"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
                 loading="eager"
             >
@@ -72,7 +74,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Article3}
                 alt="Article 3"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -81,7 +83,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Article4}
                 alt="Article 4"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -90,7 +92,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Article5}
                 alt="Article 5"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -99,16 +101,16 @@ export default function MagazineIllustrations() {
             <Image
                 src={Article6}
                 alt="Article 6"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <Image
                 src={Article7}
                 alt="Article 7"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -117,7 +119,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Illustration1}
                 alt="Illustration 1"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -126,7 +128,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Illustration2}
                 alt="llustration 2"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -135,7 +137,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Illustration3}
                 alt="llustration 3"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -144,7 +146,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Illustration4}
                 alt="llustration 4"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -153,7 +155,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Illustration5}
                 alt="llustration 5"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -162,7 +164,7 @@ export default function MagazineIllustrations() {
             <Image
                 src={Illustration6}
                 alt="llustration 6"
-                style={{borderRadius: 4}}
+                style={{ borderRadius: 4 }}
                 placeholder='blur'
             >
             </Image>
@@ -187,4 +189,5 @@ export default function MagazineIllustrations() {
             <br />
         </Container>
     </MyContainer>
+    </Layout>
 }

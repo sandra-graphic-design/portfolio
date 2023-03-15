@@ -12,6 +12,8 @@ import Zobeida3 from "../../public/assets/zobeida/Zobeida_03.png"
 import Zobeida4 from "../../public/assets/zobeida/Zobeida_04.png"
 import Zobeida5 from "../../public/assets/zobeida/Zobeida_05.png"
 import ProtectedImage from "../../components/protected-image";
+import Layout from '../../components/layout'
+
 
 
 export default function Zobeida() {
@@ -19,7 +21,7 @@ export default function Zobeida() {
     const theme = useTheme();
     const { t } = useTranslation();
 
-    return <MyContainer>
+    return <Layout><MyContainer>
         <Head>
             <title>Zobeida</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -99,4 +101,5 @@ export default function Zobeida() {
             <br />
         </Container>
     </MyContainer>
+    </Layout>
 }

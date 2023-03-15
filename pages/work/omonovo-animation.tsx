@@ -28,6 +28,7 @@ const iframeStyle = {
     width: "100%",
     height: "100%",
 } as CSSProperties;
+import Layout from '../../components/layout'
 
 export default function OmonovoAnimation() {
 
@@ -36,7 +37,7 @@ export default function OmonovoAnimation() {
     const [locale, setLocale] = useContext(LanguageContext);
 
 
-    return <MyContainer>
+    return <Layout><MyContainer>
         <Head>
             <title>Omonovo Animation</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -83,4 +84,5 @@ export default function OmonovoAnimation() {
             <br />
         </Container>
     </MyContainer>
+    </Layout>
 }

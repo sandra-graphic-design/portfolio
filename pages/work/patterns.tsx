@@ -31,6 +31,8 @@ import Patterns22 from "../../public/assets/patterns/Patterns_22.png";
 import Patterns23 from "../../public/assets/patterns/Patterns_23.png";
 import Patterns24 from "../../public/assets/patterns/Patterns_24.png";
 import ProtectedImage from "../../components/protected-image";
+import Layout from '../../components/layout'
+
 
 
 
@@ -39,7 +41,7 @@ export default function PatternDesigns() {
     const theme = useTheme();
     const { t } = useTranslation();
 
-    return <MyContainer>
+    return <Layout><MyContainer>
         <Head>
             <title>Pattern Designs</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -282,4 +284,5 @@ export default function PatternDesigns() {
             <br />
         </Container>
     </MyContainer>
+    </Layout>
 }

@@ -14,6 +14,8 @@ import useTranslation from "../../intl/useTranslation"
 import EmblaCarousel from '../../components/emblaCarousel'
 import { EmblaOptionsType } from 'embla-carousel-react'
 import ProtectedImage from "../../components/protected-image"
+import Layout from '../../components/layout'
+
 
 
 export default function RoyalQueenSeeds() {
@@ -34,7 +36,7 @@ export default function RoyalQueenSeeds() {
     const SLIDES_ORGASMS = Array.from(Array(SLIDE_COUNT_ORGASMS).keys())
     const SLIDES_INSOMNIA = Array.from(Array(SLIDE_COUNT_INSOMNIA).keys())
 
-    return <MyContainer>
+    return <Layout><MyContainer>
         <Head>
             <title>Royal Queen Seeds</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -152,4 +154,5 @@ export default function RoyalQueenSeeds() {
             <br />
         </Container>
     </MyContainer>
+    </Layout>
 }
