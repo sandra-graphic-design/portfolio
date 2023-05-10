@@ -15,7 +15,6 @@ import ProtectedImage from "../../components/protected-image";
 import Layout from '../../components/layout'
 
 
-
 export default function Zobeida() {
 
     const theme = useTheme();
